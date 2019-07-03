@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"><head><link type="text/css" rel="stylesheet" href="css/theme.css.xhtml?ln=primefaces-redmond" /><link type="text/css" rel="stylesheet" href="/simca/javax.faces.resource/primefaces.css.xhtml?ln=primefaces" /><script type="text/javascript" src="/simca/javax.faces.resource/jquery/jquery.js.xhtml?ln=primefaces"></script><script type="text/javascript" src="/simca/javax.faces.resource/primefaces.js.xhtml?ln=primefaces"></script><script type="text/javascript" src="/simca/javax.faces.resource/idlemonitor/idlemonitor.js.xhtml?ln=primefaces"></script><script type="text/javascript" src="/simca/javax.faces.resource/jquery/jquery-plugins.js.xhtml?ln=primefaces"></script>
+
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.reject.min.js"></script>
+	<script type="text/javascript" src="js/jquery.reject.options.js"></script>
+	<script>
+   		$ = jQuery;
+   	</script>
+   	
+
+
+	<!-- Basic Page Needs
+  ================================================== -->
+	
+	<meta name="description" />
+	<meta name="author" />
+
+	<!-- Mobile Specific Metas
+  ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	<link rel="shortcut icon" href="favicon.png" />
+
+	<!-- CSS
+  ================================================== -->
+	<link rel="stylesheet" type="text/css" href="css/estilos.css" />
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<!---
+	<script type="text/javascript">
+		function validar()
+		{
+			if ( $('.userNameClass').val() == '' ) $('#msgErrorUsuario').show('fast'); 
+			else $('#msgErrorUsuario').hide('fast');
+			if ( $('.passwordClass').val() == '' ) $('#msgErrorContrasena').show('fast');
+			else $('#msgErrorContrasena').hide('fast');
+
+			if ( $('.userNameClass').val() == '' || $('.passwordClass').val() == '' ) return false;
+			else return true;
+		}
+	</script> -->
+	<title>SIGE</title></head><body><script id="j_idt8_s" type="text/javascript">$(function(){PrimeFaces.cw('IdleMonitor','widget_j_idt8',{id:'j_idt8',timeout:1000000,onidle:function(){},onactive:function(){location.reload();}},'idlemonitor');});</script>  
+	<div id="antorcha"></div>
+	<div id="bandera"></div>
+
+	<header>
+		<a href="http://www.unicauca.edu.co" id="logoU"></a>
+		<p class="separador"></p>
+		<p id="desc">Sistema Integrado de gestión de electivas</p>
+	</header>
+
+	<div class="container"><span id="mensaje"></span><script id="mensaje_s" type="text/javascript">$(function(){PrimeFaces.cw('Growl','widget_mensaje',{id:'mensaje',sticky:false,life:6000,escape:true,msgs:[]});});</script> 
+		<div id="general">
+			
+
+			<div class="login">
+				<div class="login-screen">
+					<div class="app-title">
+						<img class="logo_sige" src="img/sige_logo.png" alt="">
+						<p>Iniciar sesion</p>
+					</div>
+		
+					<div class="login-form">
+					<form action="tablaHorario/" method="post">
+						{% csrf_token %}
+						<div class="control-group">
+						<input type="text" class="login-field" value="" name="username" placeholder="username" id="login-name" required>
+						<label class="login-field-icon fui-user" for="login-name"></label>
+						</div>
+		
+						<div class="control-group">
+						<input type="password" class="login-field" value="" name="password" placeholder="password" id="login-pass" required>
+						<label class="login-field-icon fui-lock" for="login-pass"></label>
+						</div>
+		
+						<a class="btn btn-primary btn-large btn-block" >
+							<button type="submit">login</button>
+							
+						</a>
+					</form>
+						<a class="login-link" href="#">Lost your password?</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<footer>
+		<p>2019  | Grupo de trabajo Dragones Infernales  <br />
+			<a href="http://www.unicauca.edu.co">Universidad del Cauca</a>  | Versión: 1.0  <br /><span style="display: none"></span> 
+		</p>
+	</footer>
+	
+	
+	
+	</body>
+</html>

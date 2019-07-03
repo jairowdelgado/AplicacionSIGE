@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Electivas</title>
+</head>
+<body>
+    <h1>Electivas</h1>
+
+    {%   for electiva in electivas  %}
+        {{ forloop.counter }}
+        {{ electiva.name }}<br>
+    {% endfor %}
+    
+    <form action="index/" method="POST">
+        {% csrf_token %}
+        <input type="text" name="name">
+	<input type="text" name="password">
+        <button type="submit">enviar xd</button>
+
+
+    </form>
+</body>
+</html>
