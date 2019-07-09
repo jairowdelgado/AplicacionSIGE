@@ -8,7 +8,6 @@ def login_controller(request):
     pass
 
 
-
 def logout_controller(request):
     auth.logout(request)
-    return redirect('login_controller')
+    #return redirect('login_controller')

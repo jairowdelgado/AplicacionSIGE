@@ -1,29 +1,55 @@
 from django.shortcuts import render
-from django.views.generic import ListView
+ 
+# Instanciamos las vistas genéricas de Django 
+from django.views.generic import ListView, DetailView 
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+ 
+# Instanciamos el modelo 'Postres' para poder usarlo en nuestras Vistas CRUD
 from .models import Electiva
-from django.urls import reverse_lazy
-from django.views.generic.detail import DetailView
-from django.views.generic.edit import CreateView,UpdateView,DeleteView
+# Nos sirve para redireccionar despues de una acción revertiendo patrones de expresiones regulares 
+from django.urls import reverse
+ 
+# Habilitamos el uso de mensajes en Django
+from django.contrib import messages 
+ 
+# Habilitamos los mensajes para class-based views 
+from django.contrib.messages.views import SuccessMessageMixin 
+ 
+# Habilitamos los formularios en Django
+from django import forms
 
-# Create your views here.
 
 
-class ElectivaList(ListView):
+class ElectivaListado(ListView):
     model = Electiva
 
-class ElectivaDetail(DetailView):
+class ElectivaDetalle(DetailView): 
     model = Electiva
 
-class ElectivaCreation(CreateView):
-    model = Electiva
-    success_url = reverse_lazy('electivas:list')
-    fields = ['name', 'start_date', 'end_date', 'picture']
+class ElectivaCrear(SuccessMessageMixin, CreateView): 
+    model = Electiva 
+    form = Electiva 
+    fields = "__all__"
+    success_message = 'Electiva Creado Correctamente !' 
+     
+    def get_success_url(self):        
+        return reverse('leer') 
 
-class ElectivaUpdate(UpdateView):
-    model = Electiva
-    success_url = reverse_lazy('electivas:list')
-    fields = ['name', 'start_date', 'end_date', 'picture']
+class ElectivaActualizar(SuccessMessageMixin, UpdateView): 
+    model = Electiva 
+    form = Electiva 
+    fields = "__all__" 
+    success_message = 'Electiva Actualizado Correctamente !' 
+     
+    def get_success_url(self):               
+        return reverse('leer')
 
-class ElectivaDelete(DeleteView):
-    model = Electiva
-    success_url = reverse_lazy('electivas:list')
+class ElectivaEliminar(SuccessMessageMixin, DeleteView): 
+    model = Electiva 
+    form = Electiva
+    fields = "__all__"     
+     
+    def get_success_url(self): 
+        success_message = 'Electiva Eliminado Correctamente !' 
+        messages.success (self.request, (success_message))       
+        return reverse('leer')

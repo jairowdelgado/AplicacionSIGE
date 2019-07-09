@@ -18,23 +18,8 @@ from django.urls import path
 from django.conf.urls import include, url
 
 urlpatterns = [
-    path('accounts/', include('django.contrib.auth.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),   
     path('secretaria/', include('secretaria.urls')),
     path('electivas/', include('electivas.urls')),
     path('admin/', admin.site.urls),
-
-    # url(r'^accounts/', include('django.contrib.auth.urls')),
-    # url(r'accounts/logout/$',logout_controller,name='logout'),
-
-    # path('secretaria/',secretaria,name='secretaria')
-
-
-    #electivas
-    #url(r'^cursos/', include('electivas.urls', namespace='electivas')),
-    #path('electivas', electivas.views.ElectivaList.as_view(), name='elctiva_list'),
-    #path('contact/<int:pk>', electivas.views.ElectivaDetail.as_view(), name='elctiva_detail'),
-    #path('create', electivas.views.ElectivaCreation.as_view(), name='elctiva_create'),
-    #path('update/<int:pk>', electivas.views.ElectivaUpdate.as_view(), name='elctiva_update'),
-    #path('delete/<int:pk>', electivas.views.ElectivaDelete.as_view(), name='elctiva_delete'),
-
 ]
