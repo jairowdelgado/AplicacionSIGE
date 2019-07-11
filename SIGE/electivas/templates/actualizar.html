@@ -12,7 +12,80 @@
     {%load widget_tweaks%}
   </head>
   <body>
-    <form method="post" enctype="multipart/form-data">
+    
+    {# JS y jQuery Bootstrap #}
+    {% bootstrap_javascript jquery='full' %} 
+  </body>
+</html>
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+      {# Cargamos la librería #}
+      {% load bootstrap4 %}
+          
+      {# CSS Bootstrap #}
+      {% bootstrap_css %}   
+
+      {# Archivos #}
+      {% load static %} <!-- STATIC_URL -->    
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <title>SIGE</title>
+  </head>
+  <body background="/static/img/back-interno.png">
+    <header >
+        <div class="container-fluid bg-dark text-white" style="background-image: url('img/back-header-int1.png');">
+            <div class="row">
+                <div class="col-2">
+                    <img src="/static/img/logo.png" class="img-fluid">
+                </div>
+                <div class="col-8">
+                    <h1 class="display-3"> <b> SIGE </b></h1>
+                    <h2 class="lead">Sistema Integrado de Gestion de Electivas</h2>
+                </div>
+                <div class="col-2">
+                    <img src="/static/img/sige_logo.png" class="img-fluid">   
+                </div>
+              </div>
+        </div>
+    </header>
+    <!-- Aqui va el jumbotron--> 
+
+    <div class="container text-white py-1">
+        <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark">
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                  <div class="navbar-nav text-center">
+                      <a class="nav-item nav-link" href="">Inicio </a>
+                      <a class="nav-item nav-link" href="">Gestion Electivas</a>                                                                                
+                    </div>
+              </div>
+              <span class="navbar-text">                  
+                  <div class="nav-item nav-link">
+                  {% block content %}
+                  <form action="{% url 'logout' %}" method="post">
+                      {% csrf_token %}		
+                      <button class="btn btn-primary btn-large btn-block" type="submit" name="submit">
+                          Cerrar sesión							
+                      </button>						
+                  </form>	
+                  {% endblock content %}
+                </span>
+                </div>
+          </nav>
+    </div>
+    
+    <div class="container">
+    
+      <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
         
         <!-- {{ form.as_p }} -->
@@ -30,9 +103,23 @@
         <a href="../" type="submit" class="btn btn-primary">Volver</a>
         
       </form>
+     
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    
+    <footer></footer>
 
 
     {# JS y jQuery Bootstrap #}
     {% bootstrap_javascript jquery='full' %} 
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.js"></script>
   </body>
 </html>

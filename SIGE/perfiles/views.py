@@ -10,4 +10,4 @@ def login_controller(request):
 
 def logout_controller(request):
     auth.logout(request)
-    #return redirect('login_controller')
+    return redirect('/accounts/login')    

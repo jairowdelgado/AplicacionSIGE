@@ -17,4 +17,5 @@ urlpatterns = [
  
     # La ruta 'eliminar' que usaremos para eliminar un postre o registro de la Base de Datos 
     path('eliminar/<int:pk>', views.ElectivaEliminar.as_view(), name='eliminar'),  
+    
 ]
