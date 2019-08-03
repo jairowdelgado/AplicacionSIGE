@@ -1,0 +1,44 @@
+[
+    {
+        "hora1":"7",
+        "sala":"salon 226 FIET",
+        "dia":"1"
+    },
+    {
+        "hora1":"9",
+        "sala":"salon 224 FIET",
+        "dia":"1"
+    },
+    {
+        "hora1":"11",
+        "sala":"sala 4 FIET",
+        "dia":"1"
+    },
+    {
+        "hora1":"14",
+        "sala":"salon 334 FIET",
+        "dia":"1"
+    },
+    {
+        "hora1":"7",
+        "sala":"salon 321 FIET",
+        "dia":"2"
+    },
+    {
+        "hora1":"7",
+        "sala":"salon 223 FIET",
+        "dia":"3"
+    },
+    {
+        "hora1":"11",
+        "sala":"salon 336 FIET",
+        "dia":"5"
+    }
+    ,
+    {
+        "hora1":"9",
+        "sala":"salon 346 FIET",
+        "dia":"4"
+    }
+    
+]
