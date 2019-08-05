@@ -313,3 +313,18 @@ footer p a:visited
 		background-color: #ECF0F1;
 		align-content: right;
 	}
+	
+	.horarioMa{
+		text-align:center; 
+		font-size:20px;
+	}
+	.seleccion{
+		background:url("../img/seleccion.png");
+		width:10%;
+	}
+	#btnLeft:active{
+		background-image:url("seleccion.png") no-repeat;
+		
+		width:90px;
+		height:74px;
+	}

@@ -60,7 +60,7 @@ function generar_html(datos){
         estilo="style='background:#777x '";
        }
       nuevo_html += `
-      <tr >
+      <tr>
           <td > `+hora+`:00 `+aux+`</td>`
         if(hora==13){
             hora=12;
@@ -74,7 +74,8 @@ function generar_html(datos){
          
           if(mat.hora1 == hora && j==mat.dia){ 
                 bandera=1;
-                nuevo_html += `<td  class="materia active" style="background:`+getRandomColor()+`; text-align:center; font-size:20px;  ">${mat.sala} </td>`;     
+                var x="";
+                nuevo_html += `<td class="horarioMa"  style="background:`+getRandomColor()+`;" ondblclick="this.style.background='`+getRandomColor()+`'; this.style.color='#111';" onclick="this.style.background='#F02F2F'; this.style.color='#FFF'; "  >${mat.sala} </td>`;     
             }
             
         });
@@ -92,14 +93,17 @@ function generar_html(datos){
     return nuevo_html;
   }
   function getRandomColor() {
-    var letters = '123456789ABCDEF';
+    var letters = '456789ABCDE';
     var color = '#';
     for (var i = 0; i < 6; i++) {
-      color += letters[Math.floor(Math.random() * 15)];
+      color += letters[Math.floor(Math.random() * 11)];
     }
     return color;
   }
   function cambioColor(){
-
+    var x= "-moz-radial-gradient(center, ellipse cover, rgba(242,246,248,1) 0%, rgba(217,226,232,1) 48%, rgba(217,225,231,1) 49%, rgba(216,225,231,1) 50%, rgba(181,198,208,1) 51%, rgba(224,239,249,1) 53%);";
+    return x;
+    
   }
+
   
